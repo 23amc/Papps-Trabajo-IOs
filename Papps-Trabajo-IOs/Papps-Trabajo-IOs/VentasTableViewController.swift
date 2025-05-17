@@ -31,6 +31,18 @@ class VentasTableViewController: UITableViewController
     {
         return ventas.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VentaCell", for: indexPath) as! VentasTableViewCell
+        
+        cell.Id.text = ventas[indexPath.row].idVenta
+        cell.Nombre.text = ventas[indexPath.row].nombreProd
+        cell.Precio.text = String(ventas[indexPath.row].precio)
+        cell.Cantidad.text = String(ventas[indexPath.row].cantidad)
+
+        return cell
+    }
 
 
 }

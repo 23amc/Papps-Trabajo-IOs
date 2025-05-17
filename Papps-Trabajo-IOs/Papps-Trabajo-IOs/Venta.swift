@@ -11,9 +11,9 @@ import UIKit
 class Venta
 {
     var idVenta: String
-    var NombreProd: String
-    var Precio: Double
-    var Cantidad: Int
+    var nombreProd: String
+    var precio: Double
+    var cantidad: Int
     
     public init(idVenta: String, NombreProd: String, Precio: Double, Cantidad: Int)
     {
