@@ -18,8 +18,8 @@ class Venta
     public init(idVenta: String, NombreProd: String, Precio: Double, Cantidad: Int)
     {
         self.idVenta = idVenta
-        self.NombreProd = NombreProd
-        self.Precio = Precio
-        self.Cantidad = Cantidad
+        self.nombreProd = NombreProd
+        self.precio = Precio
+        self.cantidad = Cantidad
     }
 }
