@@ -50,6 +50,23 @@ class ProductosTableViewController: UITableViewController
         
         DataManager.shared.productos = productos
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let detailVC = segue.destination as! DataViewController
+        
+        let selectedRow = tableView.indexPathForSelectedRow!.row
+        
+        let productoSeleccionado = productos[selectedRow]
+        
+        detailVC.nomProd = productoSeleccionado.nombre
+        detailVC.descProd = productoSeleccionado.descripcion
+        detailVC.imgProd = productoSeleccionado.imagen
+        detailVC.idProd = productoSeleccionado.idProducto
+        detailVC.precioProd = productoSeleccionado.precio
+        detailVC.stockProd = productoSeleccionado.stock
+    }
+
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
