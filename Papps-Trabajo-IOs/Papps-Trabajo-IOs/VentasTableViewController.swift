@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VentasTableViewController: UITableViewController
+class VentasTableViewController: UITableViewController, AnadirVentaDelegate
 {
     var ventas = [Venta]()
 
@@ -51,5 +51,21 @@ class VentasTableViewController: UITableViewController
         return cell
     }
 
+    func didAgregarVenta(_ venta: Venta)
+    {
+        ventas.append(venta)
+        tableView.reloadData()
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "irAAñadirVenta", let destinoVC = segue.destination as? AnadirVentaViewController
+        {
+            destinoVC.delegate = self
+        }
+    }
 }
+
+
+    
+

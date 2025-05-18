@@ -75,6 +75,13 @@ class ProductosTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "irAAñadirVentaDesdeProductos", let destinoVC = segue.destination as? AnadirVentaViewController
+        {
+            destinoVC.productosDisponibles = productos
+        }
+    }
 
 }
