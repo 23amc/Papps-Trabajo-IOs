@@ -14,7 +14,14 @@ class VentasTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let venta1 = Venta(idVenta: "V001", NombreProd: "Camiseta básica", Precio: 9.99, Cantidad: 10)
+        let venta2 = Venta(idVenta: "V005", NombreProd: "Gorra ajustable", Precio: 12.00, Cantidad: 2)
+        let venta3 = Venta(idVenta: "V006", NombreProd: "Mochila escolar", Precio: 34.50, Cantidad: 5)
+        let venta4 = Venta(idVenta: "V007", NombreProd: "Reloj digital", Precio: 19.95, Cantidad: 7)
+        let venta5 = Venta(idVenta: "V008", NombreProd: "Bufanda de lana", Precio: 14.99, Cantidad: 20)
 
+        ventas = [venta1,venta2,venta3,venta4,venta5]
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

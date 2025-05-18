@@ -22,10 +22,7 @@ class ProductosTableViewController: UITableViewController {
 
         let producto4 = Producto(idProducto: "P004", nombre: "Zapatillas deportivas", descripcion: "Zapatillas ligeras y cómodas diseñadas para caminar o entrenar. Suela antideslizante, plantilla ergonómica y materiales transpirables que garantizan confort durante todo el día.", precio: 49.95, stock: 8, imagen: UIImage(named: "zapatillas")!)
 
-        let producto5 = Producto(
-            idProducto: "P005",
-            nombre: "Gorra ajustable",
-            descripcion: "Gorra de estilo beisbol fabricada en algodón con cierre ajustable. Protección contra el sol con visera curva, ideal para actividades deportivas o looks casuales.", precio: 12.00, stock: 25, imagen: UIImage(named: "gorra")!)
+        let producto5 = Producto(idProducto: "P005", nombre: "Gorra ajustable", descripcion: "Gorra de estilo beisbol fabricada en algodón con cierre ajustable. Protección contra el sol con visera curva, ideal para actividades deportivas o looks casuales.", precio: 12.00, stock: 25, imagen: UIImage(named: "gorra")!)
 
         let producto6 = Producto(idProducto: "P006", nombre: "Mochila escolar", descripcion: "Mochila ergonómica con múltiples compartimentos. Espalda acolchada, tirantes ajustables y espacio para portátil de hasta 15 pulgadas.", precio: 34.50, stock: 12, imagen: UIImage(named: "mochila")!)
 
