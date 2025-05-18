@@ -57,13 +57,7 @@ class VentasTableViewController: UITableViewController, AnadirVentaDelegate
         tableView.reloadData()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.identifier == "irAAñadirVenta", let destinoVC = segue.destination as? AnadirVentaViewController
-        {
-            destinoVC.delegate = self
-        }
-    }
+    
 }
 
 

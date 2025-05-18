@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ProductosTableViewController: UITableViewController {
+class ProductosTableViewController: UITableViewController
+{
     var productos = [Producto]()
 
     override func viewDidLoad()
@@ -46,6 +47,8 @@ class ProductosTableViewController: UITableViewController {
 
 
         productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9,producto10,producto11,producto12,producto13,producto14,producto15]
+        
+        DataManager.shared.productos = productos
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -75,13 +78,6 @@ class ProductosTableViewController: UITableViewController {
 
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.identifier == "irAAñadirVentaDesdeProductos", let destinoVC = segue.destination as? AnadirVentaViewController
-        {
-            destinoVC.productosDisponibles = productos
-        }
-    }
+
 
 }

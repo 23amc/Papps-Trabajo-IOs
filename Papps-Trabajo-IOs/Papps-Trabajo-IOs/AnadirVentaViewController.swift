@@ -26,6 +26,8 @@ class AnadirVentaViewController: UIViewController
     {
         super.viewDidLoad()
         
+        productosDisponibles = DataManager.shared.productos
+        
         pickerHandler = ProductoPickerHandler(productos: productosDisponibles)
         pickerProducto.delegate = pickerHandler
         pickerProducto.dataSource = pickerHandler

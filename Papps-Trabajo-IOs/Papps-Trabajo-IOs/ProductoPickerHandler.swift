@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ProductoPickerHandler: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+class ProductoPickerHandler: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
+{
     var productos: [Producto]
 
-    init(productos: [Producto]) {
+    init(productos: [Producto])
+    {
         self.productos = productos
     }
 
