@@ -20,11 +20,7 @@ class ProductosTableViewController: UITableViewController {
 
         let producto3 = Producto(idProducto: "P003", nombre: "Sudadera con capucha", descripcion: "Sudadera de estilo urbano con capucha ajustable, bolsillo frontal tipo canguro y forro interior afelpado. Ideal para días fríos o actividades al aire libre.", precio: 39.90, stock: 10, imagen: UIImage(named: "sudadera")!)
 
-        let producto4 = Producto(idProducto: "P004", nombre: "Zapatillas deportivas", descripcion: "Zapatillas ligeras y cómodas diseñadas para caminar o entrenar. Suela antideslizante, plantilla ergonómica y materiales transpirables que garantizan confort durante todo el día.",
-            precio: 49.95,
-            stock: 8,
-            imagen: UIImage(named: "zapatillas")!
-        )
+        let producto4 = Producto(idProducto: "P004", nombre: "Zapatillas deportivas", descripcion: "Zapatillas ligeras y cómodas diseñadas para caminar o entrenar. Suela antideslizante, plantilla ergonómica y materiales transpirables que garantizan confort durante todo el día.", precio: 49.95, stock: 8, imagen: UIImage(named: "zapatillas")!)
 
         let producto5 = Producto(
             idProducto: "P005",
@@ -39,7 +35,7 @@ class ProductosTableViewController: UITableViewController {
 
         let producto9 = Producto(idProducto: "P009", nombre: "Cartera de piel", descripcion: "Cartera de piel genuina con espacio para tarjetas, billetes y monedas. Diseño compacto y elegante.", precio: 24.95, stock: 10, imagen: UIImage(named: "cartera")!)
 
-        let producto10 = Producto(idProducto: "P010", nombre: "Auriculares inalámbricos", descripcion: "Auriculares Bluetooth con estuche de carga. Sonido estéreo y control táctil. Compatibles con iOS y Android.", precio: 59.99, stock: 5, imagen: UIImage(named: "auriculares")!)
+        let producto10 = Producto(idProducto: "P010", nombre: "Auriculares inalámbricos", descripcion: "Auriculares Bluetooth con estuche de carga. Sonido estéreo y control táctil. Compatibles con iOS y Android.", precio: 59.99, stock: 5, imagen: UIImage(named: "cascos")!)
 
         let producto11 = Producto(idProducto: "P011", nombre: "Agenda 2025", descripcion: "Agenda con tapa dura, separadores mensuales y espacio diario para notas. Ideal para estudiantes y profesionales.", precio: 11.90, stock: 30, imagen: UIImage(named: "agenda")!)
 
@@ -72,13 +68,13 @@ class ProductosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductoTableViewCell", for: indexPath) as! ProductosTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductoCell", for: indexPath) as! ProductosTableViewCell
         cell.idProd.text = productos[indexPath.row].idProducto
         cell.nomProd.text = productos[indexPath.row].nombre
-        cell.descipcion.text = productos[indexPath.row].descripcion
-        cell.precioProd.text = String(productos[indexPath.row].precio)
+        cell.descripcion.text = productos[indexPath.row].descripcion
+        cell.precio.text = String(productos[indexPath.row].precio)
         cell.stock.text = String(productos[indexPath.row].stock)
-        cell.imgProd.image = productos[indexPath.row].imagen
+        cell.imagen.image = productos[indexPath.row].imagen
 
         return cell
     }

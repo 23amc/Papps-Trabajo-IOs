@@ -12,10 +12,11 @@ class ProductosTableViewCell: UITableViewCell {
     
     @IBOutlet weak var idProd: UILabel!
     @IBOutlet weak var nomProd: UILabel!
-    @IBOutlet weak var descipcion: UILabel!
+    @IBOutlet weak var descripcion: UILabel!
     @IBOutlet weak var stock: UILabel!
-    @IBOutlet weak var precioProd: UILabel!
-    @IBOutlet weak var imgProd: UIImageView!
+    @IBOutlet weak var precio: UILabel!
+    @IBOutlet weak var imagen: UIImageView!
+    
     
     
     override func awakeFromNib() {
