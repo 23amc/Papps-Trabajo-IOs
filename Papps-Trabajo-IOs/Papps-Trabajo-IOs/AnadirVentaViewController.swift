@@ -7,17 +7,13 @@
 
 import UIKit
 
-protocol AnadirVentaDelegate: AnyObject
-{
-    func didAgregarVenta(_ venta: Venta)
-}
 
 class AnadirVentaViewController: UIViewController
 {
+    
     @IBOutlet weak var cantidad: UITextField!
     @IBOutlet weak var pickerProducto: UIPickerView!
     
-    weak var delegate: AnadirVentaDelegate?
     private var pickerHandler: ProductoPickerHandler!
     
     var productosDisponibles = [Producto]()
@@ -25,6 +21,7 @@ class AnadirVentaViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        cantidad.keyboardType = .numberPad
         
         productosDisponibles = DataManager.shared.productos
         
@@ -37,22 +34,23 @@ class AnadirVentaViewController: UIViewController
     {
         let index = pickerProducto.selectedRow(inComponent: 0)
         let producto = productosDisponibles[index]
-
-        guard let cantidadTexto = cantidad.text, let cantidadInt = Int(cantidadTexto), cantidadInt > 0
+                
+        guard let cantidadTexto = cantidad.text, let cantidadInt = Int(cantidadTexto),cantidadInt > 0
         else
         {
+            mostrarAlerta(mensaje: "Ingresa una cantidad válida.")
             return
         }
-
-        let venta = Venta(
-            idVenta: "V\(UUID().uuidString.prefix(4))",
-            NombreProd: producto.nombre,
-            Precio: producto.precio,
-            Cantidad: cantidadInt )
-
-            delegate?.didAgregarVenta(venta)
-            navigationController?.popViewController(animated: true)
-        }
+        
+        let venta = Venta( idVenta: "V\(UUID().uuidString.prefix(4))",
+                           NombreProd: producto.nombre,
+                           Precio: producto.precio,
+                           Cantidad: cantidadInt )
+                
+        DataManager.shared.ventas.append(venta)
+                
+        navigationController?.popViewController(animated: true)
+    }
 
     func mostrarAlerta(mensaje: String)
     {

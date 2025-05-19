@@ -11,6 +11,7 @@ class DataManager
 {
     static let shared = DataManager()
     var productos: [Producto] = []
+    var ventas = [Venta]()
 
     private init() {}
 }

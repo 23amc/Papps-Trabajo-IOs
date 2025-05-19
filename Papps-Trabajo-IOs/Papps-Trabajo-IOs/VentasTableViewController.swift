@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VentasTableViewController: UITableViewController, AnadirVentaDelegate
+class VentasTableViewController: UITableViewController
 {
     var ventas = [Venta]()
 
@@ -22,7 +22,17 @@ class VentasTableViewController: UITableViewController, AnadirVentaDelegate
         let venta5 = Venta(idVenta: "V008", NombreProd: "Bufanda de lana", Precio: 14.99, Cantidad: 20)
 
         ventas = [venta1,venta2,venta3,venta4,venta5]
+        DataManager.shared.ventas = [venta1, venta2, venta3, venta4, venta5]
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        ventas = DataManager.shared.ventas
+        tableView.reloadData()
+    }
+
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {

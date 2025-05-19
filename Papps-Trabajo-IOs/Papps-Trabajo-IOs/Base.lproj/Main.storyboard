@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NvL-nw-uei">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NvL-nw-uei">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,9 +18,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xav-Uy-RFW" kind="relationship" relationship="viewControllers" id="Vf7-vK-qd9"/>
-                        <segue destination="a5M-9E-acj" kind="relationship" relationship="viewControllers" id="L54-Jo-veO"/>
-                        <segue destination="F2G-QZ-FEl" kind="relationship" relationship="viewControllers" id="fzz-MY-Zmi"/>
+                        <segue destination="F2G-QZ-FEl" kind="relationship" relationship="viewControllers" id="C15-AO-1N5"/>
+                        <segue destination="a5M-9E-acj" kind="relationship" relationship="viewControllers" id="azH-EG-RcH"/>
+                        <segue destination="xav-Uy-RFW" kind="relationship" relationship="viewControllers" id="4vW-Jq-czK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v09-F2-S6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,13 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nueva Venta:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qz-eN-j8S">
-                                <rect key="frame" x="71" y="93" width="258" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ProductosPicker" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-P3-zqp">
                                 <rect key="frame" x="0.0" y="151" width="393" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -133,6 +126,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nueva Venta:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qz-eN-j8S">
+                                <rect key="frame" x="142" y="93" width="109" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fjb-CO-Dok"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -140,13 +140,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="IDa-bR-Cun"/>
                     <navigationItem key="navigationItem" id="yYy-dg-9b9"/>
                     <connections>
-                        <outlet property="cantidad" destination="e7r-cp-Ljg" id="2yE-2d-dJn"/>
+                        <outlet property="cantidad" destination="qAj-tK-vSu" id="GDi-ar-fmZ"/>
                         <outlet property="pickerProducto" destination="mkF-P3-zqp" id="urz-kg-GHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNE-0g-kCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="640"/>
+            <point key="canvasLocation" x="704.58015267175574" y="639.43661971830988"/>
         </scene>
         <!--Item-->
         <scene sceneID="e2g-C1-cdG">
@@ -252,7 +252,7 @@
             <objects>
                 <viewController id="MrZ-K6-8vw" customClass="DataViewController" customModule="Papps_Trabajo_IOs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FDK-2G-PIS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-6i-AAN">
