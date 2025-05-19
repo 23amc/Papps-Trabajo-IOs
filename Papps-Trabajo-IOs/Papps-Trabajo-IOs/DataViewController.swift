@@ -11,7 +11,7 @@ class DataViewController: UIViewController {
     
     @IBOutlet weak var dataNom: UILabel!
     @IBOutlet weak var dataStock: UILabel!
-    @IBOutlet weak var dataDesc: UILabel!
+    @IBOutlet weak var dataDesc: UITextView!
     @IBOutlet weak var dataImg: UIImageView!
     
     
