@@ -34,22 +34,29 @@ class AnadirVentaViewController: UIViewController
     {
         let index = pickerProducto.selectedRow(inComponent: 0)
         let producto = productosDisponibles[index]
-                
-        guard let cantidadTexto = cantidad.text, let cantidadInt = Int(cantidadTexto),cantidadInt > 0
-        else
+            
+        let cantidadTexto = cantidad.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+        guard let cantidadInt = Int(cantidadTexto), cantidadInt > 0 else
         {
             mostrarAlerta(mensaje: "Ingresa una cantidad válida.")
             return
         }
-        
-        let venta = Venta( idVenta: "V\(UUID().uuidString.prefix(4))",
-                           NombreProd: producto.nombre,
-                           Precio: producto.precio,
-                           Cantidad: cantidadInt )
-                
+
+        let venta = Venta(
+            idVenta: "V\(UUID().uuidString.prefix(4))",
+            NombreProd: producto.nombre,
+            Precio: producto.precio,
+            Cantidad: cantidadInt
+        )
+
         DataManager.shared.ventas.append(venta)
-                
-        navigationController?.popViewController(animated: true)
+
+        let alerta = UIAlertController(title: "Éxito", message: "Venta añadida correctamente.", preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+        })
+        present(alerta, animated: true)
     }
 
     func mostrarAlerta(mensaje: String)
