@@ -21,6 +21,7 @@
                         <segue destination="F2G-QZ-FEl" kind="relationship" relationship="viewControllers" id="C15-AO-1N5"/>
                         <segue destination="a5M-9E-acj" kind="relationship" relationship="viewControllers" id="azH-EG-RcH"/>
                         <segue destination="xav-Uy-RFW" kind="relationship" relationship="viewControllers" id="4vW-Jq-czK"/>
+                        <segue destination="VF1-Os-zop" kind="relationship" relationship="viewControllers" id="uLK-uI-sch"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v09-F2-S6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,6 +148,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNE-0g-kCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704.58015267175574" y="639.43661971830988"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tej-LB-Wmn">
+            <objects>
+                <viewController id="VF1-Os-zop" customClass="AnadirProductoViewController" customModule="Papps_Trabajo_IOs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fnX-ym-ZX5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IdProducto" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ro1-1Y-HFC">
+                                <rect key="frame" x="33" y="118" width="326" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nombre" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXL-wY-KZ6">
+                                <rect key="frame" x="33" y="180" width="326" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stock" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWC-Ei-76T">
+                                <rect key="frame" x="33" y="240" width="326" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Precio" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxY-E8-hme">
+                                <rect key="frame" x="33" y="300" width="326" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7z-OD-tW8">
+                                <rect key="frame" x="153" y="549" width="86" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Guardar"/>
+                                <connections>
+                                    <action selector="guardarProd:" destination="VF1-Os-zop" eventType="touchUpInside" id="Pue-28-sLd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xL5-KO-zI7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="mSy-mx-I5N"/>
+                    <connections>
+                        <outlet property="NomTF" destination="pXL-wY-KZ6" id="Y31-8L-v2Q"/>
+                        <outlet property="StockTF" destination="IWC-Ei-76T" id="T1G-7r-bDj"/>
+                        <outlet property="idProdTF" destination="Ro1-1Y-HFC" id="UZ4-WF-OV6"/>
+                        <outlet property="precioTF" destination="lxY-E8-hme" id="3rY-ce-OdR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f52-Td-YVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.58015267175574" y="-1486.6197183098593"/>
         </scene>
         <!--Item-->
         <scene sceneID="e2g-C1-cdG">
