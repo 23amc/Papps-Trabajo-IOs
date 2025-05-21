@@ -9,8 +9,6 @@ import UIKit
 
 class VentasTableViewController: UITableViewController
 {
-    var ventas = [Venta]()
-
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -20,19 +18,18 @@ class VentasTableViewController: UITableViewController
         let venta3 = Venta(idVenta: "V006", NombreProd: "Mochila escolar", Precio: 34.50, Cantidad: 5)
         let venta4 = Venta(idVenta: "V007", NombreProd: "Reloj digital", Precio: 19.95, Cantidad: 7)
         let venta5 = Venta(idVenta: "V008", NombreProd: "Bufanda de lana", Precio: 14.99, Cantidad: 20)
-
-        ventas = [venta1,venta2,venta3,venta4,venta5]
-        DataManager.shared.ventas = [venta1, venta2, venta3, venta4, venta5]
+        
+        if DataManager.shared.ventas.isEmpty
+        {
+            DataManager.shared.ventas = [venta1, venta2, venta3, venta4, venta5]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        
-        ventas = DataManager.shared.ventas
         tableView.reloadData()
     }
-
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -46,27 +43,27 @@ class VentasTableViewController: UITableViewController
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return ventas.count
+        return DataManager.shared.ventas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VentaCell", for: indexPath) as! VentasTableViewCell
         
-        cell.Id.text = ventas[indexPath.row].idVenta
-        cell.Nombre.text = ventas[indexPath.row].nombreProd
-        cell.Precio.text = String(ventas[indexPath.row].precio)
-        cell.Cantidad.text = String(ventas[indexPath.row].cantidad)
+        let venta = DataManager.shared.ventas[indexPath.row]
+        cell.Id.text = venta.idVenta
+        cell.Nombre.text = venta.nombreProd
+        cell.Precio.text = String(venta.precio)
+        cell.Cantidad.text = String(venta.cantidad)
 
         return cell
     }
 
     func didAgregarVenta(_ venta: Venta)
     {
-        ventas.append(venta)
+        DataManager.shared.ventas.append(venta)
         tableView.reloadData()
     }
-
     
 }
 
