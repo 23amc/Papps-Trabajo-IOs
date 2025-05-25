@@ -78,6 +78,3 @@ class AnadirVentaViewController: UIViewController
         present(alerta, animated: true)
     }
 }
-
-
-

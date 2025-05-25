@@ -25,7 +25,6 @@ class AnadirProductoViewController: UIViewController {
               let stockStr = StockTF.text, !stockStr.isEmpty, let stock = Int(stockStr),
               let precioStr = precioTF.text, !precioStr.isEmpty, let precio = Double(precioStr)
               else {
-                   
             mostrarAlerta(mensaje: "Complete todos los campos correctamente")
             return
         }
